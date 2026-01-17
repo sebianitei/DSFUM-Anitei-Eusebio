@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "author": "User",
+  "editor": "wokwi",
+  "serialMonitor": { "display": "always" },
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 350, "left": -100, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 350, "left": 100, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote", "top": 307.2, "left": 441.6, "attrs": {} },
+
+    { "type": "wokwi-max7219-matrix", "id": "m0", "top": 0, "left": 0, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m1", "top": 0, "left": 75, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m2", "top": 0, "left": 150, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m3", "top": 0, "left": 225, "attrs": { "chain": "1" } },
+
+    { "type": "wokwi-max7219-matrix", "id": "m4", "top": 75, "left": 0, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m5", "top": 75, "left": 75, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m6", "top": 75, "left": 150, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m7", "top": 75, "left": 225, "attrs": { "chain": "1" } },
+
+    { "type": "wokwi-max7219-matrix", "id": "m8", "top": 150, "left": 0, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m9", "top": 150, "left": 75, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m10", "top": 150, "left": 150, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m11", "top": 150, "left": 225, "attrs": { "chain": "1" } },
+
+    { "type": "wokwi-max7219-matrix", "id": "m12", "top": 225, "left": 0, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m13", "top": 225, "left": 75, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m14", "top": 225, "left": 150, "attrs": { "chain": "1" } },
+    { "type": "wokwi-max7219-matrix", "id": "m15", "top": 225, "left": 225, "attrs": { "chain": "1" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "gray", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "gray", [] ],
+
+    [ "esp:23", "m0:DIN", "green", [] ],
+    [ "esp:18", "m0:CLK", "orange", [] ],
+    [ "esp:27", "m0:CS", "yellow", [] ],
+
+    [ "m0:DOUT", "m1:DIN", "transparent", [] ],
+    [ "m0:CLK", "m1:CLK", "transparent", [] ],
+    [ "m0:CS", "m1:CS", "transparent", [] ],
+
+    [ "m1:DOUT", "m2:DIN", "transparent", [] ],
+    [ "m1:CLK", "m2:CLK", "transparent", [] ],
+    [ "m1:CS", "m2:CS", "transparent", [] ],
+
+    [ "m2:DOUT", "m3:DIN", "transparent", [] ],
+    [ "m2:CLK", "m3:CLK", "transparent", [] ],
+    [ "m2:CS", "m3:CS", "transparent", [] ],
+
+    [ "m3:DOUT", "m4:DIN", "transparent", [] ],
+    [ "m3:CLK", "m4:CLK", "transparent", [] ],
+    [ "m3:CS", "m4:CS", "transparent", [] ],
+
+    [ "m4:DOUT", "m5:DIN", "transparent", [] ],
+    [ "m4:CLK", "m5:CLK", "transparent", [] ],
+    [ "m4:CS", "m5:CS", "transparent", [] ],
+
+    [ "m5:DOUT", "m6:DIN", "transparent", [] ],
+    [ "m5:CLK", "m6:CLK", "transparent", [] ],
+    [ "m5:CS", "m6:CS", "transparent", [] ],
+
+    [ "m6:DOUT", "m7:DIN", "transparent", [] ],
+    [ "m6:CLK", "m7:CLK", "transparent", [] ],
+    [ "m6:CS", "m7:CS", "transparent", [] ],
+
+    [ "m7:DOUT", "m8:DIN", "transparent", [] ],
+    [ "m7:CLK", "m8:CLK", "transparent", [] ],
+    [ "m7:CS", "m8:CS", "transparent", [] ],
+
+    [ "m8:DOUT", "m9:DIN", "transparent", [] ],
+    [ "m8:CLK", "m9:CLK", "transparent", [] ],
+    [ "m8:CS", "m9:CS", "transparent", [] ],
+
+    [ "m9:DOUT", "m10:DIN", "transparent", [] ],
+    [ "m9:CLK", "m10:CLK", "transparent", [] ],
+    [ "m9:CS", "m10:CS", "transparent", [] ],
+
+    [ "m10:DOUT", "m11:DIN", "transparent", [] ],
+    [ "m10:CLK", "m11:CLK", "transparent", [] ],
+    [ "m10:CS", "m11:CS", "transparent", [] ],
+
+    [ "m11:DOUT", "m12:DIN", "transparent", [] ],
+    [ "m11:CLK", "m12:CLK", "transparent", [] ],
+    [ "m11:CS", "m12:CS", "transparent", [] ],
+
+    [ "m12:DOUT", "m13:DIN", "transparent", [] ],
+    [ "m12:CLK", "m13:CLK", "transparent", [] ],
+    [ "m12:CS", "m13:CS", "transparent", [] ],
+
+    [ "m13:DOUT", "m14:DIN", "transparent", [] ],
+    [ "m13:CLK", "m14:CLK", "transparent", [] ],
+    [ "m13:CS", "m14:CS", "transparent", [] ],
+
+    [ "m14:DOUT", "m15:DIN", "transparent", [] ],
+    [ "m14:CLK", "m15:CLK", "transparent", [] ],
+    [ "m14:CS", "m15:CS", "transparent", [] ],
+
+    [ "esp:26", "ir1:DAT", "purple", [] ],
+    [ "esp:GND.1", "ir1:GND", "black", [] ],
+    [ "esp:5V", "ir1:VCC", "red", [] ],
+
+    [ "esp:5V", "m0:VCC", "red", [] ],
+    [ "esp:GND.1", "m0:GND", "black", [] ],
+    [ "esp:5V", "m1:VCC", "red", [] ],
+    [ "esp:GND.1", "m1:GND", "black", [] ],
+    [ "esp:5V", "m2:VCC", "red", [] ],
+    [ "esp:GND.1", "m2:GND", "black", [] ],
+    [ "esp:5V", "m3:VCC", "red", [] ],
+    [ "esp:GND.1", "m3:GND", "black", [] ],
+
+    [ "esp:5V", "m4:VCC", "red", [] ],
+    [ "esp:GND.1", "m4:GND", "black", [] ],
+    [ "esp:5V", "m5:VCC", "red", [] ],
+    [ "esp:GND.1", "m5:GND", "black", [] ],
+    [ "esp:5V", "m6:VCC", "red", [] ],
+    [ "esp:GND.1", "m6:GND", "black", [] ],
+    [ "esp:5V", "m7:VCC", "red", [] ],
+    [ "esp:GND.1", "m7:GND", "black", [] ],
+
+    [ "esp:5V", "m8:VCC", "red", [] ],
+    [ "esp:GND.1", "m8:GND", "black", [] ],
+    [ "esp:5V", "m9:VCC", "red", [] ],
+    [ "esp:GND.1", "m9:GND", "black", [] ],
+    [ "esp:5V", "m10:VCC", "red", [] ],
+    [ "esp:GND.1", "m10:GND", "black", [] ],
+    [ "esp:5V", "m11:VCC", "red", [] ],
+    [ "esp:GND.1", "m11:GND", "black", [] ],
+
+    [ "esp:5V", "m12:VCC", "red", [] ],
+    [ "esp:GND.1", "m12:GND", "black", [] ],
+    [ "esp:5V", "m13:VCC", "red", [] ],
+    [ "esp:GND.1", "m13:GND", "black", [] ],
+    [ "esp:5V", "m14:VCC", "red", [] ],
+    [ "esp:GND.1", "m14:GND", "black", [] ],
+    [ "esp:5V", "m15:VCC", "red", [] ],
+    [ "esp:GND.1", "m15:GND", "black", [] ]
+  ],
+  "dependencies": {}
+}
